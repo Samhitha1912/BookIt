@@ -32,6 +32,7 @@ const App = () => {
   }, []);
 
   return (
+    <BrowserRouter>
     <AnimatePresence exitBeforeEnter>
       <div className="w-screen h-auto flex flex-col bg-primary">
         <Header />
@@ -43,7 +44,9 @@ const App = () => {
           </Routes>
         </main>
       </div>
+      
     </AnimatePresence>
+    </BrowserRouter>
   );
 };
 

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { app } from "./firebase.config";
-
+import {HashLink as Linked } from "react-router-hash-link";
 import Logo from "../img/logo.png";
 import Avatar from "../img/avatar.png";
 import { Link } from "react-router-dom";
@@ -73,7 +73,8 @@ const Header = () => {
               Home
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
-              Categories
+            <Linked to = '#categories'>Categories</Linked> 
+              
             </li>
             <li className="text-lg text-textColor hover:text-headingColor duration-100 transition-all ease-in-out cursor-pointer">
               Membership
