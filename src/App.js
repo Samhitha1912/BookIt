@@ -5,26 +5,25 @@ import { CreateContainer, Header, MainContainer } from "./components";
 import { useStateValue } from "./context/StateProvider";
 import { getAllBookItems } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
-import {BrowserRouter} from "react-router-dom";
 const App = () => {
   const [{ bookItems }, dispatch] = useStateValue();
 
   const fetchData = async () => {
-    await getAllBookItems().then(data=>{
-
+    await getAllBookItems().then(function(doc){
+    //         console.log(data);
+    // });
     
-      // if (doc.exists) {
-      //     console.log("Document data:", doc.data());
-      // } else {
-      //     // doc.data() will be undefined in this case
-      //     console.log("No such document!");
-      // }}
-      dispatch({
-        type: actionType.SET_BOOK_ITEMS,
-        bookItems: data,
-      }); 
+      if (doc.exists) {
+          console.log("Document data:", doc.data());
+      } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+      }});
+      // dispatch({
+      //   type: actionType.SET_BOOK_ITEMS,
+      //   bookItems: data,
+      // }); 
 
-  });
 };
 
   useEffect(() => {
@@ -32,7 +31,6 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
     <AnimatePresence exitBeforeEnter>
       <div className="w-screen h-auto flex flex-col bg-primary">
         <Header />
@@ -44,9 +42,7 @@ const App = () => {
           </Routes>
         </main>
       </div>
-      
     </AnimatePresence>
-    </BrowserRouter>
   );
 };
 
