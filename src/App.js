@@ -3,20 +3,29 @@ import { Route, Routes } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { CreateContainer, Header, MainContainer } from "./components";
 import { useStateValue } from "./context/StateProvider";
-import { getAllFoodItems } from "./utils/firebaseFunctions";
+import { getAllBookItems } from "./utils/firebaseFunctions";
 import { actionType } from "./context/reducer";
-
+import {BrowserRouter} from "react-router-dom";
 const App = () => {
-  const [{ foodItems }, dispatch] = useStateValue();
+  const [{ bookItems }, dispatch] = useStateValue();
 
   const fetchData = async () => {
-    await getAllFoodItems().then((data) => {
+    await getAllBookItems().then(data=>{
+
+    
+      // if (doc.exists) {
+      //     console.log("Document data:", doc.data());
+      // } else {
+      //     // doc.data() will be undefined in this case
+      //     console.log("No such document!");
+      // }}
       dispatch({
-        type: actionType.SET_FOOD_ITEMS,
-        foodItems: data,
-      });
-    });
-  };
+        type: actionType.SET_BOOK_ITEMS,
+        bookItems: data,
+      }); 
+
+  });
+};
 
   useEffect(() => {
     fetchData();
