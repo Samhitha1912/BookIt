@@ -18,7 +18,7 @@ export const saveItem = async (data) => {
 // getall book items
 export const getAllBookItems = async () => {
   const items = await getDocs(
-    query(collection(firestore, "bookItems"), orderBy("id", "desc"))
+    query(collection(firestore, "BookItem"), orderBy("id", "desc"))
   );
 
   return items.docs.map((doc) => doc.data());

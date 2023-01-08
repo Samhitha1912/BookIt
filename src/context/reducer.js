@@ -18,7 +18,7 @@ const reducer = (state, action) => {
     case actionType.SET_BOOK_ITEMS:
       return {
         ...state,
-        bookItems: action.bookItems,
+        bookItems: action.BookItem,
       };
 
     case actionType.SET_CART_SHOW:

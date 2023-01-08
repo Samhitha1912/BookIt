@@ -8,7 +8,7 @@ import { useStateValue } from "../context/StateProvider";
 const MenuContainer = () => {
   const [filter, setFilter] = useState("bio");
 
-  const [{ bookItems }, dispatch] = useStateValue();
+  const [{ bookItems}, dispatch] = useStateValue();
   return (
     <section className="w-full my-6"  id="categories">
       <div className="w-full flex flex-col items-center justify-center">
@@ -58,6 +58,7 @@ const MenuContainer = () => {
         <div className="w-full">
           <RowContainer
             flag={false}
+           // (n) => n.category === filter
             data={bookItems?.filter((n) => n.category === filter)}
           />
         </div>

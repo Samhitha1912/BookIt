@@ -6,7 +6,7 @@ export const fetchUser = () => {
 
   return userInfo;
 };
-
+//export
 export const fetchCart = () => {
   const cartInfo =
     localStorage.getItem("cartItems") !== "undefined"

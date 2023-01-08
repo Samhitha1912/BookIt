@@ -6,7 +6,6 @@ import RowContainer from "./RowContainer";
 import { useStateValue } from "../context/StateProvider";
 import MenuContainer from "./MenuContainer";
 import CartContainer from "./CartContainer";
-
 const MainContainer = () => {
   const [{ bookItems, cartShow }, dispatch] = useStateValue();
   const [scrollValue, setScrollValue] = useState(0);
@@ -20,7 +19,7 @@ const MainContainer = () => {
       <section className="w-full my-6">
         <div className="w-full flex items-center justify-between">
           <p className="text-2xl font-semibold capitalize text-headingColor relative before:absolute before:rounded-lg before:content before:w-32 before:h-1 before:-bottom-2 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100">
-            Libraries near you
+            Latest Additions
           </p>
 
           <div className="hidden md:flex gap-3 items-center">
@@ -43,12 +42,11 @@ const MainContainer = () => {
         <RowContainer
           scrollValue={scrollValue}
           flag={true}
-          data={bookItems?.filter((n) => n.category === "adv")}
+          //(n.lib === "nn" || n.lib ==="mm")
+          data={bookItems?.filter((n) => (n.lib))}
         />
       </section>
-
       <MenuContainer />
-
       {cartShow && <CartContainer />}
     </div>
   );
