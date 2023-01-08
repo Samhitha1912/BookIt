@@ -15,7 +15,7 @@ export const heroData = [
   {
     id: 2,
     name: "Disappearing Earth",
-    decp: "   ",
+    decp: " ",
     price: "50",
     mem:"(Free for members)",
     imageSrc: F1,
@@ -23,7 +23,7 @@ export const heroData = [
   {
     id: 3,
     name: "The Hobbit",
-    decp: "  ",
+    decp: " ",
     price: "65",
     mem:"(Free for members)",
     imageSrc: C3,
@@ -31,7 +31,7 @@ export const heroData = [
   {
     id: 4,
     name: "Hamlet",
-    decp: "   ",
+    decp: " ",
     price: "70",
     mem:"(Free for members)",
     imageSrc: Fi1,
